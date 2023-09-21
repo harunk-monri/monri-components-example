@@ -30,7 +30,7 @@ Now you have successfully obtained an access token and initiated the payment for
 
 Please note that this guide assumes you have the necessary authentication and permissions to use the Monri API and that you have the required client ID and secret. Additionally, ensure that you follow any specific guidelines or documentation provided by Monri for integrating their payment system.
 
-<img width="1150" alt="image" src="https://github.com/harunk-monri/monri-components-example/assets/111092131/bd9b8467-048e-4f2d-962f-f4dee04f10b6">
+<img width="1791" alt="image" src="https://github.com/harunk-monri/monri-components-example/assets/111092131/9d772285-f1cd-4539-a594-9982b14866cf">
 
 
 More detailed instructions are available at: https://ipgtest.monri.com/en/documentation/components
