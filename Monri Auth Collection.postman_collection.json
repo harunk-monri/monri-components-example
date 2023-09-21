@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "f7bb96d8-08cb-40fc-a23e-6440e2af19d5",
+		"name": "Monri Auth Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24230737"
+	},
+	"item": [
+		{
+			"name": "Merchant backend  access token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "HttpOnly"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"client_id\": \"6a13d79bde8da9320e88923cb3472fb638619ccb\",\n    \"client_secret\": \"TestKeyXULLyvgWyPJSwOHe\",\n    \"scopes\": [\"payments\"],\n    \"grant_type\": \"client_credentials\"\n}"
+				},
+				"url": {
+					"raw": "https://ipgtest.monri.com/v2/oauth",
+					"protocol": "https",
+					"host": [
+						"ipgtest",
+						"monri",
+						"com"
+					],
+					"path": [
+						"v2",
+						"oauth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Merchant backend client_secret_id",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzY29wZXMiOlsicGF5bWVudHMiXSwiZXhwIjoxNjczOTczOTI2LCJpc3MiOiJodHRwczovL21vbnJpLmNvbSIsInN1YiI6IjZhMTNkNzliZGU4ZGE5MzIwZTg4OTIzY2IzNDcyZmI2Mzg2MTljY2IifQ.uRODbWQl34IENvJj-zRrClxhwVecCjrQ9JbpzQav3ZO8j-f21h1O5U1Gwdn-3N1QsIOI4mlAFn2pr8nBhr4sJ_0ljMRICK-AJ-7w_c2cwzH9kI96etgYY3ihrykpqCj48GV3OoifX_t-xzobQf35OPxCSoknsF4YINoM7XX3cHHTLPaQHgtQJJAhrzS_0br_Au1pXAArN9lnYJUDsKTYfxyIM9MF-PvifJU0nD1JWQ3G6FzBggWbQ6h_8LuIoHKbKIcmv-u8pEPjX9gFf5zBCQKW1mJSNhp69OSd87vZKSh12vAVHGED-rHKmid9Di67Y3IZXax8FFU9LZsvtJr0fg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"currency\": \"EUR\",\n  \"order_number\": \"3159daf002e3801\",\n  \"order_info\": \"Bla\",\n  \"transaction_type\": \"purchase\",\n  \"amount\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ipgtest.monri.com/v2/payment/new",
+					"protocol": "https",
+					"host": [
+						"ipgtest",
+						"monri",
+						"com"
+					],
+					"path": [
+						"v2",
+						"payment",
+						"new"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

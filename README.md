@@ -1,27 +1,36 @@
-# MonriComponentsExample
+## Instructions:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
+### Step 1: Obtain an Access Token
 
-## Development server
+1. Make a POST request to `https://ipgtest.monri.com/v2/oauth` with the following parameters in the request body:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+   ```json
+   {
+     "client_id": "Authenticity_token",
+     "client_secret": "Merchant_Key",
+     "scopes": ["payments"],
+     "grant_type": "client_credentials"
+   }
+   ```
 
-## Code scaffolding
+   - Replace `"Authenticity_token"` with your actual client ID.
+   - Replace `"Merchant_Key"` with your actual client secret.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. You will receive an access token in the response. This token will be required to initiate the payment.
 
-## Build
+### Step 2: Initiate the Payment Form
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Make a GET request to `https://ipgtest.monri.com/v2/payment/new` to initiate the payment form.
 
-## Running unit tests
+2. You can add any additional parameters or details required for your specific payment needs to this request. Refer to Monri API documentation for details on customization.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. The response will contain the payment form or information necessary to proceed with the payment process.
 
-## Running end-to-end tests
+Now you have successfully obtained an access token and initiated the payment form using Monri API. Make sure to handle any further steps and processing as per your specific integration requirements.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Please note that this guide assumes you have the necessary authentication and permissions to use the Monri API and that you have the required client ID and secret. Additionally, ensure that you follow any specific guidelines or documentation provided by Monri for integrating their payment system.
 
-## Further help
+<img width="1150" alt="image" src="https://github.com/harunk-monri/monri-components-example/assets/111092131/bd9b8467-048e-4f2d-962f-f4dee04f10b6">
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+More detailed instructions are available at: https://ipgtest.monri.com/en/documentation/components
